@@ -1,5 +1,31 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/newneba/src",
+  "monorepo": true,
+  "root": "apps/newneba",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/newneba/tsconfig.app.json"
+  },
+  "projects": {
+    "newneba": {
+      "type": "application",
+      "root": "apps/newneba",
+      "entryFile": "main",
+      "sourceRoot": "apps/newneba/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/newneba/tsconfig.app.json"
+      }
+    },
+    "resource": {
+      "type": "application",
+      "root": "apps/resource",
+      "entryFile": "main",
+      "sourceRoot": "apps/resource/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/resource/tsconfig.app.json"
+      }
+    }
+  }
 }
